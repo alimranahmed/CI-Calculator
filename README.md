@@ -7,7 +7,6 @@ About the author of this software
 	Department of CSE(28th batch)
 	Home Town: Brahmanbaria, Bangladesh
 	email: imran15-1191@diu.edu.bd
-	mobile: +8801748197835
 
 
 About the software
