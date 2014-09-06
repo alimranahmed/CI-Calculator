@@ -34,8 +34,9 @@ of percent then press the percent button(%).
 	e. g. 200 x 5%
 
 4. In the calculator, C => Clear, Del => Delete by one digit, Mod => Reminder of division
-				&
-		      abs => absolute value
+                   & abs => absolute value
+
+
 Technical Description
 -----------------------------------------------------------------
 This project contains only one java class file. All the functionality of the calculatr is implemented in this file. The font end of the program is designed using Java Swing API. 
