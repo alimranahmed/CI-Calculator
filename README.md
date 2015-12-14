@@ -3,10 +3,10 @@ About the author of this software
 -----------------------------------------------------------------
 
 	Al- Imran Ahmed(Imran)
-	Daffodil International University, Dhaka
+	Daffodil International University, Dhaka, Bangladesh
 	Department of CSE(28th batch)
 	Home Town: Brahmanbaria, Bangladesh
-	email: imran15-1191@diu.edu.bd
+	email: imran15-1191@diu.edu.bd, al.imran.cse@gmail.com
 
 
 About the software
@@ -14,7 +14,7 @@ About the software
 
 	Software Name: CI- Calculator
 	Version: 1.0.1
-	System requirement: Java Mirtual Machine(JVM); e.g jdk 7
+	System requirement: Java Virtual Machine(JVM); e.g jdk 7
 	Date of Released: 25th December 2013
 	Copyright: 2013, CI- Soft. Tech.(Al- Imran Ahmed)
 
