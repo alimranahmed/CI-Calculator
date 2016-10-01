@@ -1,15 +1,4 @@
-
-About the author of this software
------------------------------------------------------------------
-
-	Al- Imran Ahmed(Imran)
-	Daffodil International University, Dhaka, Bangladesh
-	Department of CSE(28th batch)
-	Home Town: Brahmanbaria, Bangladesh
-	email: imran15-1191@diu.edu.bd, al.imran.cse@gmail.com
-
-
-About the software
+CI- Calculator
 -----------------------------------------------------------------
 
 	Software Name: CI- Calculator
