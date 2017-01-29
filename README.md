@@ -1,4 +1,4 @@
-CI- Calculator
+# CI- Calculator
 -----------------------------------------------------------------
 
 	Software Name: CI- Calculator
@@ -8,7 +8,7 @@ CI- Calculator
 	Copyright: 2013, CI- Soft. Tech.(Al- Imran Ahmed)
 
 
-Instruction
+## Instruction
 -----------------------------------------------------------------
 
 1. To perform any double operande operation, users have to enter one operand then the operation then another operand then the equal button.
@@ -24,13 +24,15 @@ of percent then press the percent button(%).
 4. In the calculator, C => Clear, Del => Delete by one digit, Mod => Reminder of division
                    & abs => absolute value
 
+## Screenshot
+![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/Scientific-Calculator-using-JAVA-swing/master/screenshot.png)
 
 Technical Description
 -----------------------------------------------------------------
 This project contains only one java class file. All the functionality of the calculatr is implemented in this file. The font end of the program is designed using Java Swing API. 
 
 
-Limitation
+## Limitation
 -----------------------------------------------------------------
 
 1. This calculator is not able to evalute any mathmatical expression.
@@ -41,7 +43,6 @@ Limitation
 
 -----------------------------------------------------------------
 
-***If you find any bug in this software, please inform me. I also want to welcome your any suggestion about this software. Thanks for using this software.
-
------------------------------------------------------------------
-Thanks for using this software
+## Contribution
+----------------------------------------------------------------
+Contribution to is alwasy welcome. If you want to contribute on this repo just create an issue and then make a pull request with your contribution.
