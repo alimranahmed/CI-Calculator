@@ -2,10 +2,6 @@
 //	Al- Imran Ahmed
 //	Daffodil International University
 //	Department of CSE(28th batch)
-//	Home Town: Brahmanbaria
-//	email: imran15-1191@diu.edu.bd
-//	phbOne: +8801748197835
-package www.cisoft.com;
 
 import javax.swing.*;
 import java.awt.*;
@@ -261,7 +257,9 @@ public class CalculatorLayout extends JFrame implements ActionListener
 		frame.setLocationRelativeTo(null);
 		//frame.setMaximizedBounds(new Rectangle(300, 200));
 		frame.setResizable(false);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ImageIcon img = new ImageIcon("screenshot.png");
+		frame.setIconImage(img.getImage());
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
 
