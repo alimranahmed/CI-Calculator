@@ -1,9 +1,9 @@
 # CI- Calculator
 
-Version: 1.0.1
-System requirement: Java Virtual Machine(JVM); e.g jdk 7
-Date of Released: 25th December 2013
-Copyright: 2013, Al- Imran Ahmed
+    Version: 1.0.1
+    System requirement: Java Virtual Machine(JVM);
+    Date of Released: 25th December 2013
+    Copyright: 2013, Al- Imran Ahmed
 
 ## Screenshot
 ![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/Scientific-Calculator-using-JAVA-swing/master/screenshot.png)
