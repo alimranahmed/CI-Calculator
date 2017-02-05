@@ -6,6 +6,9 @@
 	Date of Released: 25th December 2013
 	Copyright: 2013, Al- Imran Ahmed
 
+## Screenshot
+![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/Scientific-Calculator-using-JAVA-swing/master/screenshot.png)
+
 ## Installation 
 1. Clone the repo using: `git clone https://github.com/alimranahmed/Scientific-Calculator-using-JAVA-swing.git`
 2. Compile & run the java file inside /src/www/cisoft. 
@@ -21,9 +24,6 @@
 	e. g. 200 x 5%
 
 4. In the calculator, C => Clear, Del => Delete by one digit, Mod => Reminder of division & abs => absolute value
-
-## Screenshot
-![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/Scientific-Calculator-using-JAVA-swing/master/screenshot.png)
 
 ## Technical Description
 This project contains only one java class file. All the functionality of the calculatr is implemented in this file. The font end of the program is designed using Java Swing API.
