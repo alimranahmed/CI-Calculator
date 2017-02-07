@@ -29,10 +29,9 @@ This project contains only one java class file. All the functionality of the cal
 
 ## Limitation
 
-1. No proper OOP design concept has been used(Project done when I was really an newbie but I really love it).
-2. This calculator is not able to evalute any mathematical expression.
-3. Due to, the limitation of value container(e.g. variable) this can't work with very learge number(more than 32 bits or 64 bits).
-4. Digit limitation is 15 digit.
+1. This calculator is not able to evalute any mathematical expression.
+2. Due to, the limitation of value container(e.g. variable) this can't work with very learge number(more than 32 bits or 64 bits).
+3. Digit limitation is 15 digit.
 
 ## Contribution
 Contribution to is alwasy welcome. If you want to contribute on this repo just create an issue and then make a pull request with your contribution.
