@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 class ElementContainer extends JFrame{
     // =======================Declaration of variable===============
-    //----------Common keys---------------
+    //----------numeric keys---------------
     public JButton bOne = new JButton("1");
     public JButton bTwo = new JButton("2");
     public JButton bThree = new JButton("3");
@@ -16,23 +16,32 @@ class ElementContainer extends JFrame{
     public JButton bEight = new JButton("8");
     public JButton bNine = new JButton("9");
     public JButton bZero = new JButton("0");
+    //operators keys
     public JButton bMul = new JButton("\u00D7");
     public JButton bDiv = new JButton("\u00F7");
     public JButton bAdd = new JButton("+");
     public JButton bSub = new JButton("\u02D7");
+    public JButton bMod = new JButton("Mod");
+    //Answer keys
     public JButton bEqual = new JButton("=");
+    //number modifier keys
     public JButton bPoint = new JButton(".");
+    //Command keys
     public JButton bDel = new JButton("DE");
     public JButton bClear = new JButton("C");
+    public JButton bExit = new JButton("EXIT");
+
+    //Percent keys
+    public JButton bPercent = new JButton("%");
+
+    //signed keys
+    //public JButton bPlusMinus = new JButton("\u00B1");
+
+    //----------Single operator keys---------------
+    public JButton bOneByN = new JButton("1/n");
     public JButton bSquare = new JButton("x\u00B2");
     public JButton bCube = new JButton("x\u00B3");
     public JButton bSqrt = new JButton("\u221A");
-    public JButton bPercent = new JButton("%");
-    public JButton bMod = new JButton("Mod");
-    public JButton bOneByN = new JButton("1/n");
-    public JButton bPlusMinus = new JButton("\u00B1");
-
-    //----------Scientific keys---------------
     public JButton bSin = new JButton("sin");
     public JButton bCos = new JButton("cos");
     public JButton bTan = new JButton("tan");
@@ -46,7 +55,6 @@ class ElementContainer extends JFrame{
     public JButton bLog = new JButton("log");
     public JButton bLn = new JButton("ln");
     public JButton bAbs = new JButton("abs");
-    public JButton bExit = new JButton("EXIT");
 
     //------------container variables---------------
     public JTextField tfDisplay = new JTextField();//result displaying screen
@@ -183,9 +191,9 @@ class ElementContainer extends JFrame{
         bOneByN.setFont(fontKeypad1);
         bOneByN.setBackground(otherColor);
         bOneByN.setFocusable(false);
-        bPlusMinus.setFont(fontKeypad);
+        /*bPlusMinus.setFont(fontKeypad);
         bPlusMinus.setBackground(numberKeyColor);
-        bPlusMinus.setFocusable(false);
+        bPlusMinus.setFocusable(false);*/
 
         //-----------------------------placing the common keys-------------------------------------
         // 1st row
@@ -214,7 +222,7 @@ class ElementContainer extends JFrame{
         // 5th row
         pKeypad1.add(bZero).setBounds(10, 152, 54, 38);
         pKeypad1.add(bPoint).setBounds(64, 152, 54, 38);
-        pKeypad1.add(bPlusMinus).setBounds(118, 152, 54, 38);
+        //pKeypad1.add(bPlusMinus).setBounds(118, 152, 54, 38);
         pKeypad1.add(bOneByN).setBounds(172, 152, 54, 38);
         pKeypad1.add(bPercent).setBounds(226, 152, 54, 38);
         pKeypad1.add(bSqrt).setBounds(280, 152, 54, 38);
