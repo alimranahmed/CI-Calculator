@@ -29,7 +29,7 @@ class ActionServer extends ElementContainer implements ActionListener{
         bPercent.addActionListener(this);
         bMod.addActionListener(this);
         bOneByN.addActionListener(this);
-        bPlusMinus.addActionListener(this);
+        //bPlusMinus.addActionListener(this);
         //scientific keys
         bSin.addActionListener(this);
         bCos.addActionListener(this);
