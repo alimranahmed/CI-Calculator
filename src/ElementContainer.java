@@ -3,66 +3,66 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class Container extends JFrame{
+class ElementContainer extends JFrame{
     // =======================Declaration of variable===============
     //----------Common keys---------------
-    private JButton bOne = new JButton("1");
-    private JButton bTwo = new JButton("2");
-    private JButton bThree = new JButton("3");
-    private JButton bFour = new JButton("4");
-    private JButton bFive = new JButton("5");
-    private JButton bSix = new JButton("6");
-    private JButton bSeven = new JButton("7");
-    private JButton bEight = new JButton("8");
-    private JButton bNine = new JButton("9");
-    private JButton bZero = new JButton("0");
-    private JButton bMul = new JButton("\u00D7");
-    private JButton bDiv = new JButton("\u00F7");
-    private JButton bAdd = new JButton("+");
-    private JButton bSub = new JButton("\u02D7");
-    private JButton bEqual = new JButton("=");
-    private JButton bPoint = new JButton(".");
-    private JButton bDel = new JButton("DE");
-    private JButton bClear = new JButton("C");
-    private JButton bSquare = new JButton("x\u00B2");
-    private JButton bCube = new JButton("x\u00B3");
-    private JButton bSqrt = new JButton("\u221A");
-    private JButton bPercent = new JButton("%");
-    private JButton bMod = new JButton("Mod");
-    private JButton bOneByN = new JButton("1/n");
-    private JButton bPlusMinus = new JButton("\u00B1");
+    public JButton bOne = new JButton("1");
+    public JButton bTwo = new JButton("2");
+    public JButton bThree = new JButton("3");
+    public JButton bFour = new JButton("4");
+    public JButton bFive = new JButton("5");
+    public JButton bSix = new JButton("6");
+    public JButton bSeven = new JButton("7");
+    public JButton bEight = new JButton("8");
+    public JButton bNine = new JButton("9");
+    public JButton bZero = new JButton("0");
+    public JButton bMul = new JButton("\u00D7");
+    public JButton bDiv = new JButton("\u00F7");
+    public JButton bAdd = new JButton("+");
+    public JButton bSub = new JButton("\u02D7");
+    public JButton bEqual = new JButton("=");
+    public JButton bPoint = new JButton(".");
+    public JButton bDel = new JButton("DE");
+    public JButton bClear = new JButton("C");
+    public JButton bSquare = new JButton("x\u00B2");
+    public JButton bCube = new JButton("x\u00B3");
+    public JButton bSqrt = new JButton("\u221A");
+    public JButton bPercent = new JButton("%");
+    public JButton bMod = new JButton("Mod");
+    public JButton bOneByN = new JButton("1/n");
+    public JButton bPlusMinus = new JButton("\u00B1");
 
     //----------Scientific keys---------------
-    private JButton bSin = new JButton("sin");
-    private JButton bCos = new JButton("cos");
-    private JButton bTan = new JButton("tan");
-    private JButton bAsin = new JButton("asin");
-    private JButton bAcos = new JButton("acos");
-    private JButton bAtan = new JButton("atan");
-    private JButton bSinH = new JButton("sinh");
-    private JButton bCosH = new JButton("cosh");
-    private JButton bTanH = new JButton("tanh");
-    private JButton bPowerOfTen = new JButton("10^n");
-    private JButton bLog = new JButton("log");
-    private JButton bLn = new JButton("ln");
-    private JButton bAbs = new JButton("abs");
-    private JButton bExit = new JButton("EXIT");
+    public JButton bSin = new JButton("sin");
+    public JButton bCos = new JButton("cos");
+    public JButton bTan = new JButton("tan");
+    public JButton bAsin = new JButton("asin");
+    public JButton bAcos = new JButton("acos");
+    public JButton bAtan = new JButton("atan");
+    public JButton bSinH = new JButton("sinh");
+    public JButton bCosH = new JButton("cosh");
+    public JButton bTanH = new JButton("tanh");
+    public JButton bPowerOfTen = new JButton("10^n");
+    public JButton bLog = new JButton("log");
+    public JButton bLn = new JButton("ln");
+    public JButton bAbs = new JButton("abs");
+    public JButton bExit = new JButton("EXIT");
 
     //------------container variables---------------
-    private JTextField tfDisplay = new JTextField();//result displaying screen
-    private JTextField tfRawInput = new JTextField();
-    private String sRawInput = "";
-    private String sDisplay = "";//Input string
-    private boolean isPlus = true;//Is the sign of the operand is plus
-    private boolean isPoint = false;//is there is decimal point in the operands
-    private boolean isOperation = false;
-    private double number1 = 0;// 1st operand
-    private double number2 = 0;// 2nd operand
-    private double result = 0;// Result
-    private char operation = ' ';// Operation
+    public JTextField tfDisplay = new JTextField();//result displaying screen
+    public JTextField tfRawInput = new JTextField();
+    public String sRawInput = "";
+    public String sDisplay = "";//Input string
+    public boolean isPlus = true;//Is the sign of the operand is plus
+    public boolean isPoint = false;//is there is decimal point in the operands
+    public boolean isOperation = false;
+    public double number1 = 0;// 1st operand
+    public double number2 = 0;// 2nd operand
+    public double result = 0;// Result
+    public char operation = ' ';// Operation
     static Color windowColor = new Color(110, 119, 129);//Color of container window
     //==================Default Constructor to Design the layout of the calculator===========================
-    public Container() {
+    public ElementContainer() {
         setBackground(windowColor);
         setLayout(null);
         JPanel pScreen1 = new JPanel(); // The screen that display the input
@@ -293,50 +293,5 @@ class Container extends JFrame{
         bPowerOfTen.setFont(fontKeypad1);
         bPowerOfTen.setBackground(otherColor);
         bPowerOfTen.setFocusable(false);
-
-        // ======================================Adding actionListener =======================================
-        ActionListener buttonListener = new ButtonListener();
-        //common keys
-        bOne.addActionListener(buttonListener);
-        bTwo.addActionListener(buttonListener);
-        bThree.addActionListener(buttonListener);
-        bFour.addActionListener(buttonListener);
-        bFive.addActionListener(buttonListener);
-        bSix.addActionListener(buttonListener);
-        bSeven.addActionListener(buttonListener);
-        bEight.addActionListener(buttonListener);
-        bNine.addActionListener(buttonListener);
-        bZero.addActionListener(buttonListener);
-        bAdd.addActionListener(buttonListener);
-        bSub.addActionListener(buttonListener);
-        bMul.addActionListener(buttonListener);
-        bDiv.addActionListener(buttonListener);
-        bPoint.addActionListener(buttonListener);
-        bEqual.addActionListener(buttonListener);
-        bDel.addActionListener(buttonListener);
-        bClear.addActionListener(buttonListener);
-        bSquare.addActionListener(buttonListener);
-        bSqrt.addActionListener(buttonListener);
-        bCube.addActionListener(buttonListener);
-        bPercent.addActionListener(buttonListener);
-        bMod.addActionListener(buttonListener);
-        bOneByN.addActionListener(buttonListener);
-        bPlusMinus.addActionListener(buttonListener);
-        //scientific keys
-        bSin.addActionListener(buttonListener);
-        bCos.addActionListener(buttonListener);
-        bTan.addActionListener(buttonListener);
-        bAsin.addActionListener(buttonListener);
-        bAcos.addActionListener(buttonListener);
-        bAtan.addActionListener(buttonListener);
-        bSinH.addActionListener(buttonListener);
-        bCosH.addActionListener(buttonListener);
-        bTanH.addActionListener(buttonListener);
-        bPowerOfTen.addActionListener(buttonListener);
-        bLog.addActionListener(buttonListener);
-        bLn.addActionListener(buttonListener);
-        bAbs.addActionListener(buttonListener);
-        bExit.addActionListener(buttonListener);
-
     }
 }

@@ -2,10 +2,10 @@ import javax.swing.*;
 
 public class AppRunner {
     public static void main(String[] CHAND){
-        Container frame = new Container();
+        ActionServer frame = new ActionServer();
         frame.setTitle("CI- Calculator");
         frame.setSize(350, 500);
-        frame.getContentPane().setBackground(Container.windowColor);
+        frame.getContentPane().setBackground(ActionServer.windowColor);
         frame.setLocationRelativeTo(null);
         //frame.setMaximizedBounds(new Rectangle(300, 200));
         frame.setResizable(false);
