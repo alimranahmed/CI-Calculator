@@ -71,6 +71,7 @@ class ElementContainer extends JFrame{
     static Color windowColor = new Color(110, 119, 129);//Color of container window
     //==================Default Constructor to Design the layout of the calculator===========================
     public ElementContainer() {
+        System.out.println(KeyPad.getAllKeys());
         setBackground(windowColor);
         setLayout(null);
         JPanel pScreen1 = new JPanel(); // The screen that display the input
