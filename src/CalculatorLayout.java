@@ -522,29 +522,9 @@ public class CalculatorLayout extends JFrame implements ActionListener {
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
-                if (operation == '+') {
-                    result = number1 + number2;
-                } else if (operation == '-') {
-                    result = number1 - number2;
-                } else if (operation == '*') {
-                    result = number1 * number2;
-                } else if (operation == '/') {
-                    result = number1 / number2;
-                } else if (operation == '%') {
-                    result = number1 % number2;
-                } else {
-                    result = number2;
-                }
-                String temp = "";
-                if (isPoint || operation == '/')//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + result);
-                    temp = "" + result;
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) result);
-                    temp = "" + (long) result;
-                }
+                result = Engine.calculate(number1, number2, operation);
+                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                tfDisplay.setText(temp);
                 operation = '+';
                 sDisplay = "";
                 number1 = result;
@@ -573,39 +553,15 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " - ";
                 tfRawInput.setText(sRawInput);
-                if (isPoint)//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + number1);
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) number1);
-                }
+                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
-                if (operation == '+') {
-                    result = number1 + number2;
-                } else if (operation == '-') {
-                    result = number1 - number2;
-                } else if (operation == '*') {
-                    result = number1 * number2;
-                } else if (operation == '/') {
-                    result = number1 / number2;
-                } else if (operation == '%') {
-                    result = number1 % number2;
-                } else {
-                    result = number2;
-                }
-                String temp = "";
-                if (isPoint || operation == '/')//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + result);
-                    temp = "" + result;
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) result);
-                    temp = "" + (long) result;
-                }
+                result = Engine.calculate(number1, number2, operation);
+
+                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                tfDisplay.setText(temp);
+
                 operation = '-';
                 sDisplay = "";
                 number1 = result;
@@ -634,39 +590,13 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " \u00D7 ";
                 tfRawInput.setText(sRawInput);
-                if (isPoint)//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + number1);
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) number1);
-                }
+                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
-                if (operation == '+') {
-                    result = number1 + number2;
-                } else if (operation == '-') {
-                    result = number1 - number2;
-                } else if (operation == '*') {
-                    result = number1 * number2;
-                } else if (operation == '/') {
-                    result = number1 / number2;
-                } else if (operation == '%') {
-                    result = number1 % number2;
-                } else {
-                    result = number2;
-                }
-                String temp = "";
-                if (isPoint || operation == '/')//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + result);
-                    temp = "" + result;
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) result);
-                    temp = "" + (long) result;
-                }
+                result = Engine.calculate(number1, number2, operation);
+                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                tfDisplay.setText(temp);
                 operation = '*';
                 sDisplay = "";
                 number1 = result;
@@ -695,39 +625,13 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " / ";
                 tfRawInput.setText(sRawInput);
-                if (isPoint)//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + number1);
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) number1);
-                }
+                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
-                if (operation == '+') {
-                    result = number1 + number2;
-                } else if (operation == '-') {
-                    result = number1 - number2;
-                } else if (operation == '*') {
-                    result = number1 * number2;
-                } else if (operation == '/') {
-                    result = number1 / number2;
-                } else if (operation == '%') {
-                    result = number1 % number2;
-                } else {
-                    result = number2;
-                }
-                String temp = "";
-                if (isPoint || operation == '/')//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + result);
-                    temp = "" + result;
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) result);
-                    temp = "" + (long) result;
-                }
+                result = Engine.calculate(number1, number2, operation);
+                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                tfDisplay.setText(temp);
                 operation = '*';
                 sDisplay = "";
                 number1 = result;
@@ -756,39 +660,13 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " mod ";
                 tfRawInput.setText(sRawInput);
-                if (isPoint)//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + number1);
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) number1);
-                }
+                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
-                if (operation == '+') {
-                    result = number1 + number2;
-                } else if (operation == '-') {
-                    result = number1 - number2;
-                } else if (operation == '*') {
-                    result = number1 * number2;
-                } else if (operation == '/') {
-                    result = number1 / number2;
-                } else if (operation == '%') {
-                    result = number1 % number2;
-                } else {
-                    result = number2;
-                }
-                String temp = "";
-                if (isPoint || operation == '/')//when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-                {
-                    tfDisplay.setText("" + result);
-                    temp = "" + result;
-                } else if (!isPoint)//when there is no bPoint in the result
-                {
-                    tfDisplay.setText("" + (long) result);
-                    temp = "" + (long) result;
-                }
+                result = Engine.calculate(number1, number2, operation);
+                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                tfDisplay.setText(temp);
                 operation = '%';
                 sDisplay = "";
                 number1 = result;
@@ -870,14 +748,8 @@ public class CalculatorLayout extends JFrame implements ActionListener {
         {
             number1 = Double.parseDouble(sDisplay);
             result = Math.pow(number1, 2);
-            String temp = "";
-            if (!isPoint) {
-                tfDisplay.setText("" + (long) result);
-                temp = "" + (long) result;
-            } else {
-                tfDisplay.setText("" + result);
-                temp = "" + result;
-            }
+            String temp = Engine.getResultToDisplay(isPoint, result);
+            tfDisplay.setText(temp);
             sRawInput += "^2 = ";
             tfRawInput.setText(sRawInput);
             sRawInput = temp;
@@ -905,14 +777,8 @@ public class CalculatorLayout extends JFrame implements ActionListener {
         {
             number1 = Double.parseDouble(sDisplay);
             result = Math.pow(number1, 3);
-            String temp = "";
-            if (!isPoint) {
-                tfDisplay.setText("" + (long) result);
-                temp = "" + (long) result;
-            } else {
-                tfDisplay.setText("" + result);
-                temp = "" + result;
-            }
+            String temp = Engine.getResultToDisplay(isPoint, result);
+            tfDisplay.setText(temp);
             sRawInput += "^3 = ";
             tfRawInput.setText(sRawInput);
             sRawInput = temp;
