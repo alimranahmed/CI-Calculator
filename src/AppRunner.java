@@ -5,7 +5,7 @@ public class AppRunner {
         ActionServer frame = new ActionServer();
         frame.setTitle("CI- Calculator");
         //frame.setSize(350, 500);
-        frame.getContentPane().setBackground(ActionServer.windowColor);
+        frame.getContentPane().setBackground(Helper.darkGrey);
         frame.setLocationRelativeTo(null);
         //frame.setMaximizedBounds(new Rectangle(300, 200));
         frame.setResizable(false);
