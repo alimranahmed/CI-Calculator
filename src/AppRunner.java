@@ -9,7 +9,7 @@ public class AppRunner {
         frame.setLocationRelativeTo(null);
         //frame.setMaximizedBounds(new Rectangle(300, 200));
         frame.setResizable(false);
-        ImageIcon img = new ImageIcon("screenshot.png");
+        ImageIcon img = new ImageIcon("assets/calculator-icon.png");
         frame.setIconImage(img.getImage());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
