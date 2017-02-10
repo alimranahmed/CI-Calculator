@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 class ActionServer extends ElementContainer implements ActionListener{
 
      ActionServer(){
-         super(350, 500);
+         super(500, 550);
         //common keys
         for(String key : this.buttonHolderMap.keySet()){
            this.buttonHolderMap.get(key).button.addActionListener(this);
@@ -13,6 +13,6 @@ class ActionServer extends ElementContainer implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Button clicked "+e.getActionCommand());
-        //tfDisplay.setText(e.getActionCommand());
+        this.inputDisplay.setText(this.inputDisplay.getText()+e.getActionCommand());
     }
 }

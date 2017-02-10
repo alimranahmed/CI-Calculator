@@ -48,7 +48,7 @@ public class ButtonHolder {
         map.put("percent", new ButtonHolder("percent", "percent", new JButton("%"), "%"));
 
         //signed keys
-        map.put("plus_minus", new ButtonHolder("signed", "plus_minus", new JButton("\u00B1"), "\u00B1"));
+        //map.put("plus_minus", new ButtonHolder("signed", "plus_minus", new JButton("\u00B1"), "\u00B1"));
 
         //----------Single operator keys---------------
         map.put("one_by_n", new ButtonHolder("single_operator", "one_by_n", new JButton("1/n"), "1/n"));
