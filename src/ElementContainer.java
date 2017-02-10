@@ -35,7 +35,8 @@ class ElementContainer extends JFrame{
     Color otherColor = new Color(247, 247, 247);
     Color copyRightColor = new Color(0, 0, 255);
     //==================Default Constructor to Design the layout of the calculator===========================
-    public ElementContainer() {
+    public ElementContainer(int width, int height) {
+        this.setSize(width, height);
         this.buttonHolderMap = ButtonHolder.getAll();
         
         setBackground(windowColor);
@@ -43,9 +44,6 @@ class ElementContainer extends JFrame{
 
         this.screens[0] = new JPanel();
         this.screens[1] = new JPanel();
-        this.keyPads[0] = new JPanel(); // The keypad that contain the common keys
-        this.keyPads[1] = new JPanel(); // The keypad that contains the scientific keys.
-
         this.setupDisplay("input");
         this.setupDisplay("output");
 
@@ -82,6 +80,21 @@ class ElementContainer extends JFrame{
 
         this.setupButtonByKey("percent", fontKeypad, otherColor);
 
+        this.keyPads[0] = new JPanel(); // The keypad that contain the common keys
+        this.keyPads[1] = new JPanel(); // The keypad that contains the scientific keys.
+        //==========================Setup the keypads=====================
+        this.add(this.keyPads[0]).setBounds(0, 100, this.getWidth(), 190);
+        this.keyPads[0].setLayout(null);
+        this.keyPads[0].setBackground(windowColor);
+
+        this.add(this.keyPads[1]).setBounds(0, 310, this.getWidth(), 145);
+        this.keyPads[1].setLayout(null);
+        this.keyPads[1].setBackground(windowColor);
+
+        for(String key : this.buttonHolderMap.keySet()){
+            this.keyPads[0].add(this.buttonHolderMap.get(key).button).setBounds(0, 0, 50, 50);
+        }
+
         /*//-----------------------------placing the common keys-------------------------------------
         // 1st row
         this.keyPads[0].add(bDel).setBounds(226, 0, 54, 38);
@@ -114,25 +127,6 @@ class ElementContainer extends JFrame{
         this.keyPads[0].add(bPercent).setBounds(226, 152, 54, 38);
         this.keyPads[0].add(bSqrt).setBounds(280, 152, 54, 38);*/
 
-
-        //==========================Setup the keypads=====================
-        this.add(this.keyPads[0]).setBounds(0, 100, 343, 190);
-        this.keyPads[0].setLayout(null);
-        this.keyPads[0].setBackground(windowColor);
-
-        this.add(this.keyPads[1]).setBounds(0, 310, 343, 145);
-        this.keyPads[1].setLayout(null);
-        this.keyPads[1].setBackground(windowColor);
-
-        for(String key : this.buttonHolderMap.keySet()){
-            this.keyPads[0].add(this.buttonHolderMap.get(key).button).setBounds(0, 0, 50, 50);
-        }
-
-        //----------------------copyright tag-------------------------------------------------------
-        JLabel copyRight = new JLabel("\u00A9 2013  CI- Technology");
-        copyRight.setForeground(copyRightColor);
-        this.keyPads[1].add(copyRight).setBounds(205, 130, 150, 15);
-
         /*//-----------------------------placing the Scientific keys-------------------------------------
         //	1st row
         this.keyPads[1].add(bSin).setBounds(10, 0, 65, 38);
@@ -151,14 +145,20 @@ class ElementContainer extends JFrame{
         this.keyPads[1].add(bCosH).setBounds(75, 76, 65, 38);
         this.keyPads[1].add(bTanH).setBounds(140, 76, 65, 38);
         this.keyPads[1].add(bExit).setBounds(205, 76, 130, 38);*/
+
+        //----------------------copyright tag-------------------------------------------------------
+        JLabel copyRight = new JLabel("\u00A9 2013  CI- Technology");
+        copyRight.setForeground(copyRightColor);
+        this.keyPads[1].add(copyRight).setBounds(205, 130, 150, 15);
     }
 
     public void setupDisplay(String type){
+        System.out.println("[ElementContainer][setupDisplay] screen width: "+this.getWidth());
         if(type.equalsIgnoreCase("input")){
             this.screens[1].setLayout(null);
-            this.add(this.screens[1]).setBounds(0, 30, 343, 50);
+            this.add(this.screens[1]).setBounds(0, 30, this.getWidth(), 50);
             this.screens[1].add(this.outputDisplay);
-            this.outputDisplay.setBounds(0, 0, 343, 50);
+            this.outputDisplay.setBounds(0, 0, this.getWidth(), 50);
             this.outputDisplay.setHorizontalAlignment(JTextField.RIGHT);
             this.outputDisplay.setFont(this.fontResDisplay);
             this.outputDisplay.setText("0");
@@ -167,9 +167,9 @@ class ElementContainer extends JFrame{
             this.outputDisplay.setForeground(Color.BLACK);
         }else{
             this.screens[0].setLayout(null);
-            this.add(this.screens[0]).setBounds(0, 0, 343, 30);
+            this.add(this.screens[0]).setBounds(0, 0, this.getWidth(), 30);
             this.screens[0].add(inputDisplay);
-            this.inputDisplay.setBounds(0, 0, 343, 30);
+            this.inputDisplay.setBounds(0, 0, this.getWidth(), 30);
             this.inputDisplay.setHorizontalAlignment(JTextField.LEFT);
             this.inputDisplay.setFont(new Font("Times New Roman", Font.PLAIN, 20));
             this.inputDisplay.setText("0");

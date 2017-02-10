@@ -4,7 +4,7 @@ public class AppRunner {
     public static void main(String[] CHAND){
         ActionServer frame = new ActionServer();
         frame.setTitle("CI- Calculator");
-        frame.setSize(350, 500);
+        //frame.setSize(350, 500);
         frame.getContentPane().setBackground(ActionServer.windowColor);
         frame.setLocationRelativeTo(null);
         //frame.setMaximizedBounds(new Rectangle(300, 200));

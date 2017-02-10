@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 class ActionServer extends ElementContainer implements ActionListener{
 
      ActionServer(){
+         super(350, 500);
         //common keys
         for(String key : this.buttonHolderMap.keySet()){
            this.buttonHolderMap.get(key).button.addActionListener(this);
