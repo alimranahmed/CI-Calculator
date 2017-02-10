@@ -3,8 +3,8 @@ import java.awt.event.ActionListener;
 
 class ActionServer extends ElementContainer implements ActionListener{
 
-     ActionServer(){
-         super(500, 550);
+     ActionServer(int width, int height){
+         super(width, height);
         //common keys
         for(String key : this.buttonHolderMap.keySet()){
            this.buttonHolderMap.get(key).button.addActionListener(this);

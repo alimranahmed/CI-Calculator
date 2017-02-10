@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class AppRunner {
     public static void main(String[] CHAND){
-        ActionServer frame = new ActionServer();
+        ActionServer frame = new ActionServer(500, 600);
         frame.setTitle("CI- Calculator");
         //frame.setSize(350, 500);
         frame.getContentPane().setBackground(Helper.darkGrey);
