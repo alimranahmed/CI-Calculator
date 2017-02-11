@@ -71,8 +71,9 @@ class ElementContainer extends JFrame {
         mapKeys = ButtonHolder.getMapKeysByType(this.buttonHolderMap, "answer");
         this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.LIGHT_BLUE);
 
-        mapKeys = ButtonHolder.getMapKeysByType(this.buttonHolderMap, "command");
-        this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.RED);
+        this.prepareButtonByKey("exit", Helper.KEY_FONT_MD, Helper.RED);
+        this.prepareButtonByKey("clear", Helper.KEY_FONT_MD, Color.ORANGE);
+        this.prepareButtonByKey("delete", Helper.KEY_FONT_MD, Color.YELLOW);
 
         mapKeys = ButtonHolder.getMapKeysByType(this.buttonHolderMap, "single_operator");
         this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.WHITE);
@@ -113,18 +114,26 @@ class ElementContainer extends JFrame {
         this.buttonHolderMap.get(key).button.setFont(font);
         this.buttonHolderMap.get(key).button.setBackground(bgColor);
         this.buttonHolderMap.get(key).button.setFocusable(false);
-        //this.buttonHolderMap.get(key).button.setBorderPainted(false);
     }
 
     private void fixButtonsPlacement() {
+        System.out.println("[ElementContainer][fixButtonsPlacement] placing buttons...");
+
+        int btnWidth = this.keyPad.getWidth() / Helper.BUTTON_PER_LINE;
+        this.keyPad.add(this.buttonHolderMap.get("exit").button).setBounds(0, 0, btnWidth, Helper.BUTTON_HEIGHT);
+        this.keyPad.add(this.buttonHolderMap.get("clear").button).setBounds(btnWidth, 0, btnWidth, Helper.BUTTON_HEIGHT);
+        this.keyPad.add(this.buttonHolderMap.get("delete").button).setBounds(btnWidth*2, 0, btnWidth, Helper.BUTTON_HEIGHT);
+
         String[] commonButtons = {"1", "2", "3", "add", "sub", "4", "5", "6", "mul", "div", "7", "8", "9", "mod", "0", "point", "percent", "equal"};
         this.setButtonByKeyList(commonButtons, Helper.BUTTON_HEIGHT);
+
         String[] scientificButtons = {"sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "log", "one_by_n", "square", "cube", "sqrt", "ten_power", "abs"};
         this.setButtonByKeyList(scientificButtons, 6*Helper.BUTTON_HEIGHT);
+        System.out.println("[ElementContainer][fixButtonsPlacement] Done!");
     }
 
     private void setButtonByKeyList(String[] buttonsKeys, int startY){
-        int btnPerLine = 5;
+        int btnPerLine = Helper.BUTTON_PER_LINE;
         int btnWidth = this.keyPad.getWidth() / btnPerLine;
         int btnHeight = Helper.BUTTON_HEIGHT;
         int extraBlock = this.totalExtraBlock(buttonsKeys.length, btnPerLine);
