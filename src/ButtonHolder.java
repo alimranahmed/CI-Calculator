@@ -3,31 +3,31 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ButtonHolder {
-    public String type; //numeric, operator, single_operator, command, sign, percent, equal
-    public String pureName; //descriptive non-space name of the button
-    public JButton button;//Actual text to be shown in button
-    public String screenText; //Actual text to be shonw in screen
+class ButtonHolder {
+    String type; //numeric, operator, single_operator, command, sign, percent, equal
+    String pureName; //descriptive non-space name of the button
+    JButton button;//Actual text to be shown in button
+    String screenText; //Actual text to be shonw in screen
 
-    ButtonHolder(String type, String pureName, JButton button, String screenText){
+    ButtonHolder(String type, String pureName, JButton button, String screenText) {
         this.type = type;
         this.pureName = pureName;
         this.button = button;
         this.screenText = screenText;
     }
 
-    public String toString(){
-        return "{type: "+this.type+", pureName: "+this.pureName+", button:"+this.button.getText()+", screenText: "+this.screenText+"}\n";
+    public String toString() {
+        return "{type: " + this.type + ", pureName: " + this.pureName + ", button:" + this.button.getText() + ", screenText: " + this.screenText + "}\n";
     }
 
-    public boolean isOperator(){
+    public boolean isOperator() {
         return this.type.equalsIgnoreCase("operator");
     }
 
-    public static Map<String, ButtonHolder> getAll(){
+    static Map<String, ButtonHolder> getAll() {
         Map<String, ButtonHolder> map = new HashMap<String, ButtonHolder>();
-        for(int i = 0; i <= 9; i++){
-            map.put(""+i, new ButtonHolder("numeric", ""+i, new JButton(""+i), ""+i));
+        for (int i = 0; i <= 9; i++) {
+            map.put("" + i, new ButtonHolder("numeric", "" + i, new JButton("" + i), "" + i));
         }
         //operators keys
         map.put("add", new ButtonHolder("operator", "add", new JButton("+"), "+"));
@@ -56,7 +56,7 @@ public class ButtonHolder {
         map.put("cube", new ButtonHolder("single_operator", "cube", new JButton("x\u00B3"), "x\u00B3"));
         map.put("sqrt", new ButtonHolder("single_operator", "square_root", new JButton("\u221A"), "\u221A"));
         String[] strings = {"sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "log", "log"};
-        for(String text: strings){
+        for (String text : strings) {
             map.put(text, new ButtonHolder("single_operator", text, new JButton(text), text));
         }
 
@@ -65,11 +65,11 @@ public class ButtonHolder {
         return map;
     }
 
-    public static ArrayList<String> getMapKeysByType(Map<String, ButtonHolder> buttonHolderMap, String type){
+    static ArrayList<String> getMapKeysByType(Map<String, ButtonHolder> buttonHolderMap, String type) {
         ArrayList<String> keyList = new ArrayList<>();
-        for(String mapKey : buttonHolderMap.keySet()){
+        for (String mapKey : buttonHolderMap.keySet()) {
             ButtonHolder buttonHolder = buttonHolderMap.get(mapKey);
-            if(buttonHolder.type.equalsIgnoreCase(type)){
+            if (buttonHolder.type.equalsIgnoreCase(type)) {
                 keyList.add(mapKey);
             }
         }
