@@ -117,17 +117,36 @@ class ElementContainer extends JFrame {
     }
 
     private void fixButtonsPlacement() {
+        String[] commonButtons = {"1", "2", "3", "add", "sub", "4", "5", "6", "mul", "div", "7", "8", "9", "mod", "0", "point", "percent", "equal"};
+        this.setButtonByKeyList(commonButtons, Helper.BUTTON_HEIGHT);
+        String[] scientificButtons = {"sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "log", "one_by_n", "square", "cube", "sqrt", "ten_power", "abs"};
+        this.setButtonByKeyList(scientificButtons, 6*Helper.BUTTON_HEIGHT);
+    }
+
+    private void setButtonByKeyList(String[] buttonsKeys, int startY){
+        int btnPerLine = 5;
+        int btnWidth = this.keyPad.getWidth() / btnPerLine;
+        int btnHeight = Helper.BUTTON_HEIGHT;
+        int extraBlock = this.totalExtraBlock(buttonsKeys.length, btnPerLine);
+
         int rowCounter = 0, colCounter = 0, counter = 0;
-        for (String key : this.buttonHolderMap.keySet()) {
-            int x = colCounter * (this.getWidth() / 6);
-            int y = 40 * rowCounter;
-            int w = this.getWidth() / 6;
-            int h = 40;
-            this.keyPad.add(this.buttonHolderMap.get(key).button).setBounds(x, y, w, h);
-            //System.out.println("at position (" + x + "," + y + ") h: " + h + " w:" + w + " --> " + this.buttonHolderMap.get(key).pureName);
-            counter++;
-            rowCounter = counter % 6 == 0 ? rowCounter + 1 : rowCounter;
-            colCounter = counter % 6 == 0 ? 0 : colCounter + 1;
+        for(String buttonKey: buttonsKeys){
+            int x = colCounter * btnWidth, y = rowCounter * btnHeight + startY;
+
+
+            if(buttonKey.equalsIgnoreCase("mod") || buttonKey.equalsIgnoreCase("equal")){
+                this.keyPad.add(this.buttonHolderMap.get(buttonKey).button).setBounds(x, y, btnWidth*2, btnHeight);
+                counter +=2;
+            }else{
+                this.keyPad.add(this.buttonHolderMap.get(buttonKey).button).setBounds(x, y, btnWidth, btnHeight);
+                counter++;
+            }
+            rowCounter = counter % btnPerLine == 0 ? rowCounter + 1 : rowCounter;
+            colCounter = counter % btnPerLine == 0 ? 0 : colCounter + 1;
         }
+    }
+
+    private int totalExtraBlock(int numberOfBtn, int btnPerLine){
+        return numberOfBtn - (numberOfBtn % btnPerLine);
     }
 }
