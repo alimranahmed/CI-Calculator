@@ -7,6 +7,8 @@ class Helper {
     final static Font KEY_FONT_MD = new Font("Times New Roman", Font.PLAIN, 20);
     final static Font KEY_FONT_SM = new Font("Times New Roman", Font.PLAIN, 15);
 
+    final static int BUTTON_HEIGHT = 40;
+
     final static Color GREEN = new Color(91, 178, 91);
     final static Color GREY = new Color(212, 212, 212);
     final static Color LIGHT_BLUE = new Color(63, 132, 243);
