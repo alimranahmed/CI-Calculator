@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-class ButtonHolder {
+class ButtonHolder{
     String type; //numeric, operator, single_operator, command, sign, percent, equal
     String pureName; //descriptive non-space name of the button
     JButton button;//Actual text to be shown in button
@@ -75,5 +75,4 @@ class ButtonHolder {
         }
         return keyList;
     }
-
 }
