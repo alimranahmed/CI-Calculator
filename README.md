@@ -6,7 +6,7 @@
     Copyright: 2013, Al- Imran Ahmed
 
 ## Screenshot
-![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/Scientific-Calculator-using-JAVA-swing/master/assets/screenshot.png)
+![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/Scientific-Calculator-using-JAVA-swing/master/assets/screenshot_1_2.png)
 
 ## Installation 
 1. Clone the repo using: `git clone https://github.com/alimranahmed/Scientific-Calculator-using-JAVA-swing.git`
