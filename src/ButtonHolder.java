@@ -41,7 +41,7 @@ class ButtonHolder{
         map.put("point", new ButtonHolder("number_modifier", "point", new JButton("."), "."));
         //Command keys
         map.put("delete", new ButtonHolder("command", "delete", new JButton("DE"), ""));
-        map.put("cancel", new ButtonHolder("command", "cancel", new JButton("C"), ""));
+        map.put("clear", new ButtonHolder("command", "clear", new JButton("C"), ""));
         map.put("exit", new ButtonHolder("command", "exit", new JButton("EXIT"), ""));
 
         //Percent keys
