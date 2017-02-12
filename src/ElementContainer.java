@@ -112,18 +112,18 @@ class ElementContainer extends JFrame {
     }
 
     private void prepareButtonByKey(String key, Font font, Color bgColor) {
-        this.buttonHolderMap.get(key).button.setFont(font);
-        this.buttonHolderMap.get(key).button.setBackground(bgColor);
-        this.buttonHolderMap.get(key).button.setFocusable(false);
+        this.buttonHolderMap.get(key).setFont(font);
+        this.buttonHolderMap.get(key).setBackground(bgColor);
+        this.buttonHolderMap.get(key).setFocusable(false);
     }
 
     private void fixButtonsPlacement() {
         System.out.println("["+new Date()+"][ElementContainer][fixButtonsPlacement] Placing buttons...");
 
         int btnWidth = this.keyPad.getWidth() / Helper.BUTTON_PER_LINE;
-        this.keyPad.add(this.buttonHolderMap.get("exit").button).setBounds(0, 0, btnWidth, Helper.BUTTON_HEIGHT);
-        this.keyPad.add(this.buttonHolderMap.get("clear").button).setBounds(btnWidth, 0, btnWidth, Helper.BUTTON_HEIGHT);
-        this.keyPad.add(this.buttonHolderMap.get("delete").button).setBounds(btnWidth*2, 0, btnWidth, Helper.BUTTON_HEIGHT);
+        this.keyPad.add(this.buttonHolderMap.get("exit")).setBounds(0, 0, btnWidth, Helper.BUTTON_HEIGHT);
+        this.keyPad.add(this.buttonHolderMap.get("clear")).setBounds(btnWidth, 0, btnWidth, Helper.BUTTON_HEIGHT);
+        this.keyPad.add(this.buttonHolderMap.get("delete")).setBounds(btnWidth*2, 0, btnWidth, Helper.BUTTON_HEIGHT);
 
         String[] commonButtons = {"1", "2", "3", "add", "sub", "4", "5", "6", "mul", "div", "7", "8", "9", "mod", "0", "point", "percent", "equal"};
         this.setButtonByKeyList(commonButtons, Helper.BUTTON_HEIGHT);
@@ -145,10 +145,10 @@ class ElementContainer extends JFrame {
 
 
             if(buttonKey.equalsIgnoreCase("mod") || buttonKey.equalsIgnoreCase("equal")){
-                this.keyPad.add(this.buttonHolderMap.get(buttonKey).button).setBounds(x, y, btnWidth*2, btnHeight);
+                this.keyPad.add(this.buttonHolderMap.get(buttonKey)).setBounds(x, y, btnWidth*2, btnHeight);
                 counter +=2;
             }else{
-                this.keyPad.add(this.buttonHolderMap.get(buttonKey).button).setBounds(x, y, btnWidth, btnHeight);
+                this.keyPad.add(this.buttonHolderMap.get(buttonKey)).setBounds(x, y, btnWidth, btnHeight);
                 counter++;
             }
             rowCounter = counter % btnPerLine == 0 ? rowCounter + 1 : rowCounter;

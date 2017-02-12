@@ -7,12 +7,13 @@ class ActionServer extends ElementContainer implements ActionListener{
          super(width, height);
         //common keys
         for(String key : this.buttonHolderMap.keySet()){
-           this.buttonHolderMap.get(key).button.addActionListener(this);
+           this.buttonHolderMap.get(key).addActionListener(this);
         }
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Button clicked "+e.getActionCommand());
+        System.out.println(e.getSource());
         this.inputDisplay.setText(this.inputDisplay.getText()+e.getActionCommand());
     }
 }
