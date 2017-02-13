@@ -27,8 +27,10 @@ class ActionServer extends ElementContainer implements ActionListener {
             this.clearScreen();
         }else if(buttonType.equalsIgnoreCase("single_operator")){
             this.singleOperation(pressedButton);
-        }else if(buttonType.equalsIgnoreCase("numeric") || buttonType.equalsIgnoreCase("number_modifier")){
-            this.inputDisplay.setText(this.inputDisplay.getText() + pressedButton.screenText);
+        }else if(buttonType.equalsIgnoreCase("numeric")){
+            this.displayNumber(pressedButton);
+        }else if(buttonType.equalsIgnoreCase("number_modifier")){
+            this.displayNumberModifier(pressedButton);
         }
     }
 
@@ -39,5 +41,20 @@ class ActionServer extends ElementContainer implements ActionListener {
 
     private void singleOperation(ButtonHolder operatorButton){
         return;
+    }
+
+    private void displayNumber(ButtonHolder numericButton){
+        if(this.inputDisplay.getText().equals("0")){
+            this.inputDisplay.setText(numericButton.screenText);
+        }else{
+            this.inputDisplay.setText(this.inputDisplay.getText()+numericButton.screenText);
+        }
+    }
+
+    private void displayNumberModifier(ButtonHolder numberModifierButton){
+        String inputText = this.inputDisplay.getText();
+        if(!inputText.contains(numberModifierButton.screenText)){
+            this.inputDisplay.setText(this.inputDisplay.getText()+numberModifierButton.screenText);
+        }
     }
 }
