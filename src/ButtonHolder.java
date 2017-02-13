@@ -6,19 +6,17 @@ import java.util.Map;
 class ButtonHolder extends JButton{
     String type; //numeric, operator, single_operator, command, sign, percent, equal
     String pureName; //descriptive non-space name of the button
-//    JButton button;//Actual text to be shown in button
-    String screenText; //Actual text to be shonw in screen
+    String screenText; //Actual text to be shown in screen
 
-    ButtonHolder(String type, String pureName, String buttonText, String screenText) {
+    private ButtonHolder(String type, String pureName, String buttonText, String screenText) {
         super(buttonText);
         this.type = type;
         this.pureName = pureName;
-//        this.button = button;
         this.screenText = screenText;
     }
 
     public String toString() {
-        return "{type: " + this.type + ", pureName: " + this.pureName + ", button:" + this.getText() + ", screenText: " + this.screenText + "}\n";
+        return "{type: " + this.type + ", pureName: " + this.pureName + ", button:" + this.getText() + ", screenText: " + this.screenText + "}";
     }
 
     public boolean isOperator() {

@@ -16,19 +16,28 @@ class ActionServer extends ElementContainer implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         ButtonHolder pressedButton = (ButtonHolder) e.getSource();
+        String buttonType = pressedButton.type;
+        String pureName = pressedButton.pureName;
+
         System.out.println(new Date()+"[ActionServer][actionPerformed] Button clicked :" + e.getActionCommand()+" "+e.getSource());
 
-        if(pressedButton.pureName.equalsIgnoreCase("exit")){
+        if(pureName.equalsIgnoreCase("exit")){
             System.exit(0);
-        }else if(pressedButton.pureName.equalsIgnoreCase("clear")){
+        }else if(pureName.equalsIgnoreCase("clear")){
             this.clearScreen();
-        }else{
-            this.inputDisplay.setText(this.inputDisplay.getText() + e.getActionCommand());
+        }else if(buttonType.equalsIgnoreCase("single_operator")){
+            this.singleOperation(pressedButton);
+        }else if(buttonType.equalsIgnoreCase("numeric") || buttonType.equalsIgnoreCase("number_modifier")){
+            this.inputDisplay.setText(this.inputDisplay.getText() + pressedButton.screenText);
         }
     }
 
     private void clearScreen(){
         this.inputDisplay.setText("0");
         this.outputDisplay.setText("0");
+    }
+
+    private void singleOperation(ButtonHolder operatorButton){
+        return;
     }
 }
