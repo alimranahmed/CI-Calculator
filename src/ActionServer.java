@@ -40,7 +40,7 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void singleOperation(ButtonHolder operatorButton){
-        return;
+        this.inputDisplay.setText(operatorButton.screenText+"("+this.inputDisplay.getText()+")");
     }
 
     private void displayNumber(ButtonHolder numericButton){
