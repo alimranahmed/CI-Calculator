@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 class ActionServer extends ElementContainer implements ActionListener {
+    Engine engine = new Engine();
 
     ActionServer(int width, int height) {
         super(width, height);
@@ -44,7 +45,10 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void singleOperation(ButtonHolder operatorButton){
-        this.inputDisplay.setText(operatorButton.screenText+"("+this.inputDisplay.getText()+")");
+        String input = this.inputDisplay.getText();
+        this.inputDisplay.setText(operatorButton.screenText+"("+input+")");
+        String result = this.engine.computeSciFun(operatorButton.pureName, input);
+        this.outputDisplay.setText(result);
     }
 
     private void displayNumber(ButtonHolder numericButton){
