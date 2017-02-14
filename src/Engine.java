@@ -1,4 +1,7 @@
-public class Engine {
+class Engine {
+    String computeSciFun(String funcName, String param){
+        return "Not implemented yet";
+    }
     public static double calculate(double number1, double number2, char operation){
         if (operation == '+') {
             return number1 + number2;
