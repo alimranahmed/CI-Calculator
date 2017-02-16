@@ -54,12 +54,11 @@ class ButtonHolder extends JButton{
         map.put("square", new ButtonHolder("single_operator", "square", "x\u00B2", "x\u00B2"));
         map.put("cube", new ButtonHolder("single_operator", "cube", "x\u00B3", "x\u00B3"));
         map.put("sqrt", new ButtonHolder("single_operator", "square_root", "\u221A", "\u221A"));
+        map.put("ten_power", new ButtonHolder("single_operator", "ten_power", "10^n", "10^n"));
         String[] strings = {"sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "log", "log"};
         for (String text : strings) {
             map.put(text, new ButtonHolder("single_operator", text, text, text));
         }
-
-        map.put("ten_power", new ButtonHolder("single_operator", "ten_power", "10^n", "10^n"));
         //map.put("abs", new ButtonHolder("single_operator", "absolute", "abs", "abs"));
         return map;
     }
