@@ -60,7 +60,7 @@ class ButtonHolder extends JButton{
         }
 
         map.put("ten_power", new ButtonHolder("single_operator", "ten_power", "10^n", "10^n"));
-        map.put("abs", new ButtonHolder("single_operator", "absolute", "abs", "abs"));
+        //map.put("abs", new ButtonHolder("single_operator", "absolute", "abs", "abs"));
         return map;
     }
 

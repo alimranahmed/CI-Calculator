@@ -128,7 +128,7 @@ class ElementContainer extends JFrame {
         String[] commonButtons = {"1", "2", "3", "add", "sub", "4", "5", "6", "mul", "div", "7", "8", "9", "mod", "0", "point", "percent", "equal"};
         this.setButtonByKeyList(commonButtons, Helper.BUTTON_HEIGHT);
 
-        String[] scientificButtons = {"sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "log", "one_by_n", "square", "cube", "sqrt", "ten_power", "abs"};
+        String[] scientificButtons = {"sin", "cos", "tan", "asin", "acos", "atan", "sinh", "cosh", "tanh", "log", "one_by_n", "square", "cube", "sqrt", "ten_power"};
         this.setButtonByKeyList(scientificButtons, 6*Helper.BUTTON_HEIGHT);
         System.out.println("["+new Date()+"][ElementContainer][fixButtonsPlacement] Done!");
     }
