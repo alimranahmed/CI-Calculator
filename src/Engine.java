@@ -8,6 +8,8 @@ class Engine {
             return ""+(Double.parseDouble(param) * Double.parseDouble(param) * Double.parseDouble(param));
         }else if(funcName.equalsIgnoreCase("square_root")){
             return ""+(Math.sqrt(Double.parseDouble(param)));
+        }else if(funcName.equalsIgnoreCase("one_by_n")){
+            return ""+((double)1/Double.parseDouble(param));
         }
         return "Not implemented yet";
     }
