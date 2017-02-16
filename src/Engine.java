@@ -1,5 +1,8 @@
 class Engine {
     String computeSciFun(String funcName, String param){
+        if(funcName.equalsIgnoreCase("square")){
+            return ""+(Double.parseDouble(param) * Double.parseDouble(param));
+        }
         return "Not implemented yet";
     }
 
