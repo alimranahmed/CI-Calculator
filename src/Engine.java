@@ -1,9 +1,13 @@
+import java.util.DoubleSummaryStatistics;
+
 class Engine {
     String computeSciFun(String funcName, String param){
         if(funcName.equalsIgnoreCase("square")){
             return ""+(Double.parseDouble(param) * Double.parseDouble(param));
         }else if(funcName.equalsIgnoreCase("cube")){
             return ""+(Double.parseDouble(param) * Double.parseDouble(param) * Double.parseDouble(param));
+        }else if(funcName.equalsIgnoreCase("square_root")){
+            return ""+(Math.sqrt(Double.parseDouble(param)));
         }
         return "Not implemented yet";
     }
