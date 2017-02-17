@@ -523,7 +523,7 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 number2 = Double.parseDouble(sDisplay);
 
                 result = Engine.calculate(number1, number2, operation);
-                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                String temp = this.getResultToDisplay(isPoint, operation, result);
                 tfDisplay.setText(temp);
                 operation = '+';
                 sDisplay = "";
@@ -1025,6 +1025,14 @@ public class CalculatorLayout extends JFrame implements ActionListener {
         } else if (e.getSource() == bExit)//exit button
         {
             System.exit(0);
+        }
+    }
+
+    static String getResultToDisplay(boolean hasPoint, char operation, double result) {
+        if (hasPoint || operation == '/') {
+            return "" + result;
+        } else {
+            return "" + (long) result;
         }
     }
 }

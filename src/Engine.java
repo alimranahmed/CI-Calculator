@@ -56,16 +56,6 @@ class Engine {
         }
     }
 
-    static String getResultToDisplay(boolean hasPoint, char operation, double result) {
-        //when there is any bPoint number or any bDivision operation, there may be a bPoint in the result
-        if (hasPoint || operation == '/') {
-            return "" + result;
-        } else {
-            //when there is no bPoint in the result
-            return "" + (long) result;
-        }
-    }
-
     static String getResultToDisplay(boolean hasPoint, double result) {
         return hasPoint ? "" + result : "" + (long) result;
     }
