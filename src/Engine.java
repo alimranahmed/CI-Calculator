@@ -16,7 +16,13 @@ class Engine {
         } else if (funcName.equalsIgnoreCase("one_by_n")) {
             return "" + ((double) 1 / paramValue);
 
-        } else if (Arrays.asList("sin", "cos", "tan").contains(funcName)) {
+        }else if(funcName.equalsIgnoreCase("ln")){
+            return ""+Math.log(paramValue);
+
+        } else if(funcName.equalsIgnoreCase("log")){
+            return ""+Math.log10(paramValue);
+
+        }else if (Arrays.asList("sin", "cos", "tan").contains(funcName)) {
             return "" + this.calculateTrigonometry(funcName, paramValue);
 
         }
