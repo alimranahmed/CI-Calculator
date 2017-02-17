@@ -121,14 +121,13 @@ class ElementContainer extends JFrame {
         System.out.println("["+new Date()+"][ElementContainer][fixButtonsPlacement] Placing buttons...");
 
         int btnWidth = this.keyPad.getWidth() / Helper.BUTTON_PER_LINE;
-        this.keyPad.add(this.buttonHolderMap.get("exit")).setBounds(0, 0, btnWidth, Helper.BUTTON_HEIGHT);
-        this.keyPad.add(this.buttonHolderMap.get("clear")).setBounds(btnWidth, 0, btnWidth, Helper.BUTTON_HEIGHT);
-        this.keyPad.add(this.buttonHolderMap.get("delete")).setBounds(btnWidth*2, 0, btnWidth, Helper.BUTTON_HEIGHT);
+        this.keyPad.add(this.buttonHolderMap.get("clear")).setBounds(0, 0, btnWidth, Helper.BUTTON_HEIGHT);
+        this.keyPad.add(this.buttonHolderMap.get("delete")).setBounds(btnWidth, 0, btnWidth, Helper.BUTTON_HEIGHT);
 
         String[] commonButtons = {"1", "2", "3", "add", "sub", "4", "5", "6", "mul", "div", "7", "8", "9", "mod", "0", "point", "percent", "equal"};
         this.setButtonByKeyList(commonButtons, Helper.BUTTON_HEIGHT);
 
-        String[] scientificButtons = {"sin", "cos", "tan", "ln", "log", "one_by_n", "square", "cube", "sqrt"};
+        String[] scientificButtons = {"sin", "cos", "tan", "ln", "log", "one_by_n", "square", "cube", "sqrt", "exit"};
         this.setButtonByKeyList(scientificButtons, 6*Helper.BUTTON_HEIGHT);
         System.out.println("["+new Date()+"][ElementContainer][fixButtonsPlacement] Done!");
     }
