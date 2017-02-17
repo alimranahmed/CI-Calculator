@@ -55,11 +55,10 @@ class Engine {
         if (hasPoint || operation == '/')
         {
             return "" + result;
-        } else if (!hasPoint) {
+        } else {
             //when there is no bPoint in the result
             return "" + (long) result;
         }
-        return "";
     }
 
     static String getResultToDisplay(boolean hasPoint, double result){
