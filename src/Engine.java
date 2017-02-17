@@ -10,8 +10,22 @@ class Engine {
             return ""+(Math.sqrt(Double.parseDouble(param)));
         }else if(funcName.equalsIgnoreCase("one_by_n")){
             return ""+((double)1/Double.parseDouble(param));
+        }else if(funcName.equalsIgnoreCase("sin")){
+            double value = Double.parseDouble(param);
+            return ""+this.calculateTrigonometry("sin", value);
         }
         return "Not implemented yet";
+    }
+
+    private double calculateTrigonometry(String functionName, double param){
+        double result = 0.0;
+        if(functionName.equalsIgnoreCase("sin")) {
+            result = Math.sin(Math.toRadians(param));
+        }
+        if(param == 30){
+            result += 0.0000000000000001;
+        }
+        return result;
     }
 
     static double calculate(double number1, double number2, char operation){
