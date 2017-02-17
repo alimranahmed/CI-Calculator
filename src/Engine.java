@@ -19,6 +19,8 @@ class Engine {
         }else if(funcName.equalsIgnoreCase("sin")){
             return ""+this.calculateTrigonometry("sin", paramValue);
 
+        }else if(funcName.equalsIgnoreCase("cos")){
+            return ""+this.calculateTrigonometry("cos", paramValue);
         }
         return "Not implemented yet";
     }
@@ -26,6 +28,8 @@ class Engine {
     private double calculateTrigonometry(String functionName, double param){
         if(functionName.equalsIgnoreCase("sin")) {
             return Math.sin(Math.toRadians(param));
+        }else if(functionName.equalsIgnoreCase("cos")){
+            return Math.cos(Math.toRadians(param));
         }
         return param;
     }
