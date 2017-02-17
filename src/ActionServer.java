@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 class ActionServer extends ElementContainer implements ActionListener {
-    Engine engine = new Engine();
+    private Engine engine = new Engine();
 
     ActionServer(int width, int height) {
         super(width, height);
