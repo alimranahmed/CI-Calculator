@@ -55,8 +55,4 @@ class Engine {
             return number2;
         }
     }
-
-    static String getResultToDisplay(boolean hasPoint, double result) {
-        return hasPoint ? "" + result : "" + (long) result;
-    }
 }

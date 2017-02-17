@@ -553,13 +553,13 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " - ";
                 tfRawInput.setText(sRawInput);
-                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
+                tfDisplay.setText(this.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
                 result = Engine.calculate(number1, number2, operation);
 
-                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                String temp = this.getResultToDisplay(isPoint, operation, result);
                 tfDisplay.setText(temp);
 
                 operation = '-';
@@ -590,12 +590,12 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " \u00D7 ";
                 tfRawInput.setText(sRawInput);
-                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
+                tfDisplay.setText(this.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
                 result = Engine.calculate(number1, number2, operation);
-                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                String temp = this.getResultToDisplay(isPoint, operation, result);
                 tfDisplay.setText(temp);
                 operation = '*';
                 sDisplay = "";
@@ -625,12 +625,12 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " / ";
                 tfRawInput.setText(sRawInput);
-                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
+                tfDisplay.setText(this.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
                 result = Engine.calculate(number1, number2, operation);
-                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                String temp = this.getResultToDisplay(isPoint, operation, result);
                 tfDisplay.setText(temp);
                 operation = '*';
                 sDisplay = "";
@@ -660,12 +660,12 @@ public class CalculatorLayout extends JFrame implements ActionListener {
                 isPlus = true;
                 sRawInput += " mod ";
                 tfRawInput.setText(sRawInput);
-                tfDisplay.setText(Engine.getResultToDisplay(isPoint, number1));
+                tfDisplay.setText(this.getResultToDisplay(isPoint, number1));
             } else if (isOperation && operation != '=') {
                 number2 = Double.parseDouble(sDisplay);
 
                 result = Engine.calculate(number1, number2, operation);
-                String temp = Engine.getResultToDisplay(isPoint, operation, result);
+                String temp = this.getResultToDisplay(isPoint, operation, result);
                 tfDisplay.setText(temp);
                 operation = '%';
                 sDisplay = "";
@@ -748,7 +748,7 @@ public class CalculatorLayout extends JFrame implements ActionListener {
         {
             number1 = Double.parseDouble(sDisplay);
             result = Math.pow(number1, 2);
-            String temp = Engine.getResultToDisplay(isPoint, result);
+            String temp = this.getResultToDisplay(isPoint, result);
             tfDisplay.setText(temp);
             sRawInput += "^2 = ";
             tfRawInput.setText(sRawInput);
@@ -777,7 +777,7 @@ public class CalculatorLayout extends JFrame implements ActionListener {
         {
             number1 = Double.parseDouble(sDisplay);
             result = Math.pow(number1, 3);
-            String temp = Engine.getResultToDisplay(isPoint, result);
+            String temp = this.getResultToDisplay(isPoint, result);
             tfDisplay.setText(temp);
             sRawInput += "^3 = ";
             tfRawInput.setText(sRawInput);
@@ -1028,11 +1028,15 @@ public class CalculatorLayout extends JFrame implements ActionListener {
         }
     }
 
-    static String getResultToDisplay(boolean hasPoint, char operation, double result) {
+    private String getResultToDisplay(boolean hasPoint, char operation, double result) {
         if (hasPoint || operation == '/') {
             return "" + result;
         } else {
             return "" + (long) result;
         }
+    }
+
+    private String getResultToDisplay(boolean hasPoint, double result) {
+        return hasPoint ? "" + result : "" + (long) result;
     }
 }
