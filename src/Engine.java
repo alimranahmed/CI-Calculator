@@ -2,30 +2,32 @@ import java.util.DoubleSummaryStatistics;
 
 class Engine {
     String computeSciFun(String funcName, String param){
+        double paramValue = Double.parseDouble(param);
+
         if(funcName.equalsIgnoreCase("square")){
-            return ""+(Double.parseDouble(param) * Double.parseDouble(param));
+            return ""+(paramValue * paramValue);
+
         }else if(funcName.equalsIgnoreCase("cube")){
-            return ""+(Double.parseDouble(param) * Double.parseDouble(param) * Double.parseDouble(param));
+            return ""+(paramValue * paramValue * paramValue);
+
         }else if(funcName.equalsIgnoreCase("square_root")){
-            return ""+(Math.sqrt(Double.parseDouble(param)));
+            return ""+(Math.sqrt(paramValue));
+
         }else if(funcName.equalsIgnoreCase("one_by_n")){
-            return ""+((double)1/Double.parseDouble(param));
+            return ""+((double)1/paramValue);
+
         }else if(funcName.equalsIgnoreCase("sin")){
-            double value = Double.parseDouble(param);
-            return ""+this.calculateTrigonometry("sin", value);
+            return ""+this.calculateTrigonometry("sin", paramValue);
+
         }
         return "Not implemented yet";
     }
 
     private double calculateTrigonometry(String functionName, double param){
-        double result = 0.0;
         if(functionName.equalsIgnoreCase("sin")) {
-            result = Math.sin(Math.toRadians(param));
+            return Math.sin(Math.toRadians(param));
         }
-        if(param == 30){
-            result += 0.0000000000000001;
-        }
-        return result;
+        return param;
     }
 
     static double calculate(double number1, double number2, char operation){
