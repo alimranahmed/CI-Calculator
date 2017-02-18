@@ -135,7 +135,6 @@ class ElementContainer extends JFrame {
         int btnPerLine = Helper.BUTTON_PER_LINE;
         int btnWidth = this.keyPad.getWidth() / btnPerLine;
         int btnHeight = Helper.BUTTON_HEIGHT;
-        int extraBlock = this.totalExtraBlock(buttonsKeys.length, btnPerLine);
 
         int rowCounter = 0, colCounter = 0, counter = 0;
         for(String buttonKey: buttonsKeys){
