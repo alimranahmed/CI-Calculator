@@ -6,7 +6,6 @@ import java.util.Map;
 
 class ElementContainer extends JFrame {
     Map<String, ButtonHolder> buttonHolderMap;
-    private JPanel screen = new JPanel();
     private JPanel keyPad = new JPanel();
     private JPanel footer = new JPanel();
 
@@ -29,14 +28,14 @@ class ElementContainer extends JFrame {
 
     private void setupDisplay() {
         System.out.println("["+new Date()+"][ElementContainer][setupDisplay] Setting up display screens...");
-        this.screen = new JPanel();
-        this.screen.setLayout(null);
+        JPanel screen = new JPanel();
+        screen.setLayout(null);
         int screenHeight = (int) (this.getHeight() * Helper.SCREEN_RATIO);
-        this.add(this.screen).setBounds(0, 0, this.getWidth(), screenHeight);
+        this.add(screen).setBounds(0, 0, this.getWidth(), screenHeight);
         //Input display
-        this.screen.add(inputDisplay);
-        int inputDisplayHeight = (int) (this.screen.getHeight() * Helper.INPUT_DISPLAY_RATIO);
-        this.inputDisplay.setBounds(0, 0, this.screen.getWidth(), inputDisplayHeight);
+        screen.add(inputDisplay);
+        int inputDisplayHeight = (int) (screen.getHeight() * Helper.INPUT_DISPLAY_RATIO);
+        this.inputDisplay.setBounds(0, 0, screen.getWidth(), inputDisplayHeight);
         this.inputDisplay.setHorizontalAlignment(JTextField.LEFT);
         this.inputDisplay.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         this.inputDisplay.setText("0");
@@ -45,9 +44,9 @@ class ElementContainer extends JFrame {
         this.inputDisplay.setForeground(Color.BLACK);
 
         //Output display
-        this.screen.add(this.outputDisplay);
-        int outputDisplayHeight = (int) (this.screen.getHeight() * Helper.OUTPUT_DISPLAY_RATIO);
-        this.outputDisplay.setBounds(0, inputDisplayHeight, this.screen.getWidth(), outputDisplayHeight);
+        screen.add(this.outputDisplay);
+        int outputDisplayHeight = (int) (screen.getHeight() * Helper.OUTPUT_DISPLAY_RATIO);
+        this.outputDisplay.setBounds(0, inputDisplayHeight, screen.getWidth(), outputDisplayHeight);
         this.outputDisplay.setHorizontalAlignment(JTextField.RIGHT);
         this.outputDisplay.setFont(Helper.SCREEN_FONT);
         this.outputDisplay.setText("0");
