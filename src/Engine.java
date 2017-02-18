@@ -39,20 +39,4 @@ class Engine {
         }
         return param;
     }
-
-    static double calculate(double number1, double number2, char operation) {
-        if (operation == '+') {
-            return number1 + number2;
-        } else if (operation == '-') {
-            return number1 - number2;
-        } else if (operation == '*') {
-            return number1 * number2;
-        } else if (operation == '/') {
-            return number1 / number2;
-        } else if (operation == '%') {
-            return number1 % number2;
-        } else {
-            return number2;
-        }
-    }
 }
