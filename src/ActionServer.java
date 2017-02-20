@@ -35,7 +35,7 @@ class ActionServer extends ElementContainer implements ActionListener {
         }else if(buttonType.equalsIgnoreCase("operator")){
             this.displayOperator(pressedButton);
         }else if(buttonType.equalsIgnoreCase("answer")){
-            this.displayResult();
+            this.getAnswer(this.inputDisplay.getText());
         }
     }
 
@@ -72,7 +72,7 @@ class ActionServer extends ElementContainer implements ActionListener {
         }
     }
 
-    private void displayResult(){
-
+    private void getAnswer(String input){
+        this.outputDisplay.setText(input);
     }
 }
