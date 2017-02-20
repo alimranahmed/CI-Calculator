@@ -73,6 +73,8 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void getAnswer(String input){
+        String operator = Helper.getFoundOperator(input, ButtonHolder.getMapKeysByType(this.buttonHolderMap, "operator"));
+        this.outputDisplay.setText("OP"+operator);
         this.outputDisplay.setText(input);
     }
 }
