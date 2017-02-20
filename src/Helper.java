@@ -27,7 +27,7 @@ class Helper {
     final static double INPUT_DISPLAY_RATIO = 0.3;
     final static double OUTPUT_DISPLAY_RATIO = 0.7;
 
-    public String getFoundOperator(String str, ArrayList<String> keys){
+    public static String getFoundOperator(String str, ArrayList<String> keys){
         for(String key:keys){
             if(str.contains(key)){
                 return key;
