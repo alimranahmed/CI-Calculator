@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 class Helper {
     final static Color darkGrey = new Color(110, 119, 129);//Color of container window
@@ -25,4 +26,13 @@ class Helper {
     //Screen division
     final static double INPUT_DISPLAY_RATIO = 0.3;
     final static double OUTPUT_DISPLAY_RATIO = 0.7;
+
+    public String getFoundOperator(String str, ArrayList<String> keys){
+        for(String key:keys){
+            if(str.contains(key)){
+                return key;
+            }
+        }
+        return "";
+    }
 }
