@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Date;
 
 class Engine {
     String computeSciFun(String funcName, String input) {
@@ -39,5 +40,27 @@ class Engine {
             return Math.tan(radianInput);
         }
         return input;
+    }
+
+    String compute(String operand1, String operand2, String operator){
+        try {
+            double parsedOperand1 = Double.parseDouble(operand1);
+            double parsedOperand2 = Double.parseDouble(operand2);
+            if (operator.equalsIgnoreCase("+")) {
+                return ""+(parsedOperand1 + parsedOperand2);
+            } else if (operator.equalsIgnoreCase("\u00D7")) {
+                return ""+(parsedOperand1 * parsedOperand2);
+            } else if (operator.equalsIgnoreCase("\u02D7")) {
+                return ""+(parsedOperand1 - parsedOperand2);
+            } else if (operator.equalsIgnoreCase("mod")) {
+                return ""+(parsedOperand1 % parsedOperand2);
+            }else if(operator.equalsIgnoreCase("\u00F7")){
+                return ""+(parsedOperand1 / parsedOperand2);
+            }
+        }catch (Exception e){
+            System.out.println(new Date()+"[Engine][compute] "+e.getMessage());
+            return "ERROR";
+        }
+        return "Failed";
     }
 }
