@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Date;
 
 class ActionServer extends ElementContainer implements ActionListener {
@@ -73,8 +74,16 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void getAnswer(String input){
-        String operator = Helper.getFoundOperator(input, ButtonHolder.getMapKeysByType(this.buttonHolderMap, "operator"));
-        this.outputDisplay.setText("OP"+operator);
-        this.outputDisplay.setText(input);
+        ArrayList<String> operatorList = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "operator");
+        String operator = Helper.getFoundOperator(input, operatorList);
+        if(operator.equals("")){
+            this.outputDisplay.setText(this.inputDisplay.getText());
+        }else{
+            int operatorPosition = input.indexOf(operator);
+            String operand1 = input.substring(0, operatorPosition);
+            String operand2 = input.substring(operatorPosition+operator.length(), input.length());
+            String result = this.engine.compute(operand1, operand2, operator);
+            this.outputDisplay.setText(result);
+        }
     }
 }
