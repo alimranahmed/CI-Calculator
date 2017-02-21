@@ -25,7 +25,10 @@
 4. In the calculator, C => Clear, Del => Delete by one digit, Mod => Reminder of division
 
 ## Technical Description
-This project contains only one java class file. All the functionality of the calculator is implemented in this file. The font end of the program is designed using Java Swing API.
+Calculators functionality is defined in the `Engine` class. 
+`ActionServer` is handling button click event. 
+`ElementContainer` class bind all calculator visual element together. 
+`ButtonHolder` create all required buttons those are being used by `ElementContainer`
 
 ## Limitation
 
