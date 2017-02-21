@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
@@ -98,7 +99,7 @@ class ElementContainer extends JFrame {
         int footerHeight = (int)(this.getHeight() * Helper.FOOTER_RATIO);
         this.add(footer).setBounds(0, footerY, this.getWidth(), footerHeight);
 
-        JLabel copyrightTag = new JLabel("\u00A9 2013  CI- Technology");
+        JLabel copyrightTag = new JLabel("\u00A9 "+ Year.now().getValue()+"  CI- Technology");
         copyrightTag.setForeground(Helper.BLUE);
         this.footer.add(copyrightTag).setBounds(0, 0, this.footer.getWidth(), this.footer.getHeight());
         System.out.println("["+new Date()+"][ElementContainer][setupFooter] Done!");
