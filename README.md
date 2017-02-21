@@ -37,4 +37,4 @@ Calculators functionality is defined in the `Engine` class.
 3. Digit limitation is 15 digit.
 
 ## Contribution
-Contribution to is always welcome. If you want to contribute on this repo just create an issue and then make a pull request with your contribution.
+Contribution to is always welcome. If you want to contribute on this project just create an issue and then make a pull request with your contribution.
