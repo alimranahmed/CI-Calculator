@@ -73,4 +73,15 @@ class ButtonHolder extends JButton{
         }
         return keyList;
     }
+
+    static ArrayList<String> getScreenTextListByType(Map<String, ButtonHolder> buttonHolderMap, String type){
+        ArrayList<String> textList = new ArrayList<>();
+        for (String mapKey : buttonHolderMap.keySet()) {
+            ButtonHolder buttonHolder = buttonHolderMap.get(mapKey);
+            if (buttonHolder.type.equalsIgnoreCase(type)) {
+                textList.add(buttonHolder.screenText);
+            }
+        }
+        return textList;
+    }
 }
