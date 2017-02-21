@@ -2,8 +2,8 @@
 
     Version: 2.0.0
     System requirement: Java Virtual Machine(JVM);
-    Date of Released: 25th December 2013
-    Copyright: 2013, Al- Imran Ahmed
+    Date of Released: 21st February 2017
+    Copyright: 2017, Al- Imran Ahmed
 
 ## Screenshot
 ![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/screenshot_2_0.png)
