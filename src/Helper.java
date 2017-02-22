@@ -36,9 +36,10 @@ class Helper {
         return "";
     }
 
-    static boolean isInString(String string, ArrayList<String> elements){
+    static boolean isLastChar(String string, ArrayList<String> elements){
+        String lastChar = string.substring(string.length()-1);
         for(String element:elements){
-            if(string.contains(element)){
+            if(lastChar.equalsIgnoreCase(element)){
                 return true;
             }
         }
