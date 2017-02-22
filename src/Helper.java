@@ -27,12 +27,21 @@ class Helper {
     final static double INPUT_DISPLAY_RATIO = 0.3;
     final static double OUTPUT_DISPLAY_RATIO = 0.7;
 
-    public static String getFoundOperator(String str, ArrayList<String> keys){
+    static String getFoundOperator(String str, ArrayList<String> keys){
         for(String key:keys){
             if(str.contains(key)){
                 return key;
             }
         }
         return "";
+    }
+
+    static boolean isInString(String string, ArrayList<String> elements){
+        for(String element:elements){
+            if(string.contains(element)){
+                return true;
+            }
+        }
+        return false;
     }
 }
