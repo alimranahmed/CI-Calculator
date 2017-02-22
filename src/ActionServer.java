@@ -68,6 +68,10 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void displayOperator(ButtonHolder operatorButton){
+
+        if(this.hasInputOperator()){
+            this.getAnswer(this.inputDisplay.getText());
+        }
         if(this.isOutputClear()){
             this.inputDisplay.setText(this.inputDisplay.getText()+operatorButton.screenText);
         }else{
@@ -76,8 +80,7 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void getAnswer(String input){
-        ArrayList<String> operatorList = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "operator");
-        String operator = Helper.getFoundOperator(input, operatorList);
+        String operator = this.getInputFirstOperator();
         if(operator.equals("")){
             this.outputDisplay.setText(this.inputDisplay.getText());
         }else{
@@ -99,5 +102,15 @@ class ActionServer extends ElementContainer implements ActionListener {
 
     private boolean isDisplayClear(){
         return this.isInputClear() && this.isOutputClear();
+    }
+
+    private String getInputFirstOperator(){
+        String input = this.inputDisplay.getText();
+        ArrayList<String> operatorList = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "operator");
+        return Helper.getFoundOperator(input, operatorList);
+    }
+
+    private boolean hasInputOperator(){
+        return !this.getInputFirstOperator().equals("");
     }
 }
