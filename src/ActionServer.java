@@ -53,7 +53,7 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void displayNumber(ButtonHolder numericButton){
-        if(this.inputDisplay.getText().equals("0")){
+        if(this.isInputClear()){
             this.inputDisplay.setText(numericButton.screenText);
         }else{
             this.inputDisplay.setText(this.inputDisplay.getText()+numericButton.screenText);
@@ -68,8 +68,10 @@ class ActionServer extends ElementContainer implements ActionListener {
     }
 
     private void displayOperator(ButtonHolder operatorButton){
-        if(!this.inputDisplay.getText().equals("0")){
+        if(this.isOutputClear()){
             this.inputDisplay.setText(this.inputDisplay.getText()+operatorButton.screenText);
+        }else{
+            this.inputDisplay.setText(this.outputDisplay.getText()+operatorButton.screenText);
         }
     }
 
@@ -85,5 +87,17 @@ class ActionServer extends ElementContainer implements ActionListener {
             String result = this.engine.compute(operand1, operand2, operator);
             this.outputDisplay.setText(result);
         }
+    }
+
+    private boolean isInputClear(){
+        return this.inputDisplay.getText().equals("0");
+    }
+
+    private boolean isOutputClear(){
+        return this.outputDisplay.getText().equals("0");
+    }
+
+    private boolean isDisplayClear(){
+        return this.isInputClear() && this.isOutputClear();
     }
 }
