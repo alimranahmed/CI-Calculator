@@ -112,7 +112,7 @@ class ActionServer extends ElementContainer implements ActionListener {
         return this.outputDisplay.getText().equals("0");
     }
 
-    private boolean isDisplayClear(){
+    private boolean isBothDisplayClear(){
         return this.isInputClear() && this.isOutputClear();
     }
 
