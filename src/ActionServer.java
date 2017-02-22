@@ -45,13 +45,6 @@ class ActionServer extends ElementContainer implements ActionListener {
         this.outputDisplay.setText("0");
     }
 
-    private void singleOperation(ButtonHolder operatorButton){
-        String input = this.inputDisplay.getText();
-        this.inputDisplay.setText(operatorButton.screenText+"("+input+")");
-        String result = this.engine.computeSciFun(operatorButton.pureName, input);
-        this.outputDisplay.setText(result);
-    }
-
     private void displayNumber(ButtonHolder numericButton){
         if(this.isInputClear()){
             this.inputDisplay.setText(numericButton.screenText);
@@ -77,6 +70,25 @@ class ActionServer extends ElementContainer implements ActionListener {
         }else{
             this.inputDisplay.setText(this.outputDisplay.getText()+operatorButton.screenText);
         }
+    }
+
+    private void singleOperation(ButtonHolder operatorButton){
+        String input = "";
+        if(!this.isOutputClear()){
+            input = this.outputDisplay.getText();
+        }else{
+            if(this.hasInputOperator()){
+                this.getAnswer(this.inputDisplay.getText());
+                input = this.outputDisplay.getText();
+            }else{
+                input = this.inputDisplay.getText();
+            }
+        }
+
+        this.inputDisplay.setText(operatorButton.screenText+"("+input+")");
+
+        String result = this.engine.computeSciFun(operatorButton.pureName, input);
+        this.outputDisplay.setText(result);
     }
 
     private void getAnswer(String input){
