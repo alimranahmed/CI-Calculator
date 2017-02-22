@@ -27,6 +27,15 @@ class ActionServer extends ElementContainer implements ActionListener {
             System.exit(0);
         }else if(pureName.equalsIgnoreCase("clear")){
             this.clearScreen();
+        }else if(pureName.equalsIgnoreCase("delete")){
+            String input = this.inputDisplay.getText();
+            ArrayList<String> operators = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "operator");
+            ArrayList<String> numbers = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "numeric");
+            if(input.length() == 1){
+                this.inputDisplay.setText("0");
+            }else if(Helper.isLastChar(input, operators) || Helper.isLastChar(input, numbers)){
+                this.inputDisplay.setText(input.substring(0, input.length()-1));
+            }
         }else if(buttonType.equalsIgnoreCase("single_operator")){
             this.singleOperation(pressedButton);
         }else if(buttonType.equalsIgnoreCase("numeric")){
