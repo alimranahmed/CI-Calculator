@@ -33,7 +33,6 @@ Calculators functionality is defined in the `Engine` class.
 `ButtonHolder` create all required buttons those are being used by `ElementContainer`
 
 ## Limitation
-
 1. This calculator is not able to evaluate any mathematical expression.
 2. Due to, the limitation of value container(e.g. variable) this can't work with very large number(more than 32 bits or 64 bits).
 3. Digit limitation is 15 digit.
