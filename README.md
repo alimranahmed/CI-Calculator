@@ -3,7 +3,7 @@
     Version: 2.0.0
     System requirement: Java Virtual Machine(JVM);
     Date of Released: 21st February 2017
-    Copyright: 2017, Al- Imran Ahmed
+    Copyright: 2017, CI- Technology
 
 ## Screenshots
 ![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/143_2_0.png)
@@ -24,7 +24,7 @@
 3. To calculate percentage, users have to enter operand(for which, percentage will be calculated) then the multiplication button(x) then enter the amount of percent then press the percent button(%).
 	e. g. 200 x 5%
 
-4. In the calculator, C => Clear, Del => Delete by one digit, Mod => Reminder of division
+4. In the calculator, C => Clear, DE => Delete by one digit, Mod => Reminder of division
 
 ## Technical Description
 Calculators functionality is defined in the `Engine` class. 
