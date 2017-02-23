@@ -7,8 +7,19 @@
 
 ## Screenshots
 ![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/143_2_0.png)
+
+Arithmetic operation
+
+
 ![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/log_2_0.png)
+
+Logarithm!
+
+
 ![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/sin_2_0.png)
+
+Trigonometry
+
 
 ## Installation 
 1. Clone the repo using: `git clone https://github.com/alimranahmed/CI-Calculator.git`
