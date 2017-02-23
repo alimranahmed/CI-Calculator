@@ -5,8 +5,10 @@
     Date of Released: 21st February 2017
     Copyright: 2017, Al- Imran Ahmed
 
-## Screenshot
-![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/screenshot_2_0.png)
+## Screenshots
+![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/143_2_0.png)
+![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/log_2_0.png)
+![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/sin_2_0.png)
 
 ## Installation 
 1. Clone the repo using: `git clone https://github.com/alimranahmed/CI-Calculator.git`
