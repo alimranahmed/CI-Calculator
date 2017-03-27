@@ -9,7 +9,10 @@ class Calculator extends ElementContainer implements ActionListener {
 
     Calculator(int width, int height) {
         super(width, height);
-        //common keys
+        this.addActionListenerToAllButton();
+    }
+
+    private void addActionListenerToAllButton(){
         for (String key : this.buttonHolderMap.keySet()) {
             this.buttonHolderMap.get(key).addActionListener(this);
         }
