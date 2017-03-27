@@ -4,10 +4,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Date;
 
-class ActionServer extends ElementContainer implements ActionListener {
+class Calculator extends ElementContainer implements ActionListener {
     private Engine engine = new Engine();
 
-    ActionServer(int width, int height) {
+    Calculator(int width, int height) {
         super(width, height);
         //common keys
         for (String key : this.buttonHolderMap.keySet()) {
@@ -133,5 +133,10 @@ class ActionServer extends ElementContainer implements ActionListener {
 
     private boolean hasInputOperator(){
         return !this.getInputFirstOperator().equals("");
+    }
+
+    public void setIcon(String iconPath){
+        ImageIcon img = new ImageIcon(iconPath);
+        this.setIconImage(img.getImage());
     }
 }
