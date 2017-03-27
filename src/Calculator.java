@@ -21,7 +21,7 @@ class Calculator extends ElementContainer implements ActionListener {
         String buttonType = pressedButton.type;
         String pureName = pressedButton.pureName;
 
-        System.out.println(new Date()+"[ActionServer][actionPerformed] Button clicked :" + e.getActionCommand()+" "+e.getSource());
+        System.out.println(new Date()+"[Calculator][actionPerformed] Button clicked :" + e.getActionCommand()+" "+e.getSource());
 
         if(pureName.equalsIgnoreCase("exit")){
             System.exit(0);
@@ -135,7 +135,7 @@ class Calculator extends ElementContainer implements ActionListener {
         return !this.getInputFirstOperator().equals("");
     }
 
-    public void setIcon(String iconPath){
+    void setIcon(String iconPath){
         ImageIcon img = new ImageIcon(iconPath);
         this.setIconImage(img.getImage());
     }
