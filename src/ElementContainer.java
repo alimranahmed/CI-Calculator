@@ -17,6 +17,8 @@ class ElementContainer extends JFrame {
         this.setSize(width, height);
         this.setBackground(Helper.darkGrey);
         this.setLayout(null);
+        this.setResizable(false);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         this.buttonHolderMap = ButtonHolder.getAll();
 

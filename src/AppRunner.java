@@ -7,5 +7,6 @@ public class AppRunner {
         calculator.getContentPane().setBackground(Helper.darkGrey);
         calculator.setLocationRelativeTo(null);
         calculator.setIcon("assets/calculator-icon.png");
+        calculator.setVisible(true);
     }
 }
