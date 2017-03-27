@@ -6,9 +6,6 @@ public class AppRunner {
         calculator.setTitle("CI- Calculator");
         calculator.getContentPane().setBackground(Helper.darkGrey);
         calculator.setLocationRelativeTo(null);
-        calculator.setResizable(false);
         calculator.setIcon("assets/calculator-icon.png");
-        calculator.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        calculator.setVisible(true);
     }
 }

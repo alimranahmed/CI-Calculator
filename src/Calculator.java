@@ -9,6 +9,9 @@ class Calculator extends ElementContainer implements ActionListener {
 
     Calculator(int width, int height) {
         super(width, height);
+        this.setResizable(false);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setVisible(true);
         //common keys
         for (String key : this.buttonHolderMap.keySet()) {
             this.buttonHolderMap.get(key).addActionListener(this);
