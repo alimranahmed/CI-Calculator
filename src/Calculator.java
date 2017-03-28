@@ -28,25 +28,25 @@ class Calculator extends ElementContainer implements ActionListener {
 
         if(pureName.equalsIgnoreCase("exit")){
             System.exit(0);
+
         }else if(pureName.equalsIgnoreCase("clear")){
             this.clearScreen();
+
         }else if(pureName.equalsIgnoreCase("delete")){
-            String input = this.inputDisplay.getText();
-            ArrayList<String> operators = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "operator");
-            ArrayList<String> numbers = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "numeric");
-            if(input.length() == 1){
-                this.inputDisplay.setText("0");
-            }else if(Helper.isLastChar(input, operators) || Helper.isLastChar(input, numbers)){
-                this.inputDisplay.setText(input.substring(0, input.length()-1));
-            }
+            this.deleteInput();
+
         }else if(buttonType.equalsIgnoreCase("single_operator")){
             this.singleOperation(pressedButton);
+
         }else if(buttonType.equalsIgnoreCase("numeric")){
             this.displayNumber(pressedButton);
+
         }else if(buttonType.equalsIgnoreCase("number_modifier")){
             this.displayNumberModifier(pressedButton);
+
         }else if(buttonType.equalsIgnoreCase("operator")){
             this.displayOperator(pressedButton);
+
         }else if(buttonType.equalsIgnoreCase("answer")){
             this.getAnswer(this.inputDisplay.getText());
         }
@@ -55,6 +55,17 @@ class Calculator extends ElementContainer implements ActionListener {
     private void clearScreen(){
         this.inputDisplay.setText("0");
         this.outputDisplay.setText("0");
+    }
+
+    private void deleteInput(){
+        String input = this.inputDisplay.getText();
+        ArrayList<String> operators = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "operator");
+        ArrayList<String> numbers = ButtonHolder.getScreenTextListByType(this.buttonHolderMap, "numeric");
+        if(input.length() == 1){
+            this.inputDisplay.setText("0");
+        }else if(Helper.isLastChar(input, operators) || Helper.isLastChar(input, numbers)){
+            this.inputDisplay.setText(input.substring(0, input.length()-1));
+        }
     }
 
     private void displayNumber(ButtonHolder numericButton){
@@ -136,10 +147,5 @@ class Calculator extends ElementContainer implements ActionListener {
 
     private boolean hasInputOperator(){
         return !this.getInputFirstOperator().equals("");
-    }
-
-    void setIcon(String iconPath){
-        ImageIcon img = new ImageIcon(iconPath);
-        this.setIconImage(img.getImage());
     }
 }
