@@ -61,6 +61,6 @@ class Engine {
             System.out.println(new Date()+"[Engine][compute] "+e.getMessage());
             return "ERROR";
         }
-        return "Failed";
+        return "FAILED";
     }
 }
