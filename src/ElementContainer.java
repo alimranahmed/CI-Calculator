@@ -160,4 +160,9 @@ class ElementContainer extends JFrame {
     private int totalExtraBlock(int numberOfBtn, int btnPerLine){
         return numberOfBtn - (numberOfBtn % btnPerLine);
     }
+
+    void setIcon(String iconPath){
+        ImageIcon img = new ImageIcon(iconPath);
+        this.setIconImage(img.getImage());
+    }
 }
