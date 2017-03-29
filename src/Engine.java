@@ -48,14 +48,19 @@ class Engine {
             double parsedOperand2 = Double.parseDouble(operand2);
             if (operator.equalsIgnoreCase("+")) {
                 return ""+(parsedOperand1 + parsedOperand2);
+
             } else if (operator.equalsIgnoreCase("\u00D7")) {
                 return ""+(parsedOperand1 * parsedOperand2);
+
             } else if (operator.equalsIgnoreCase("\u02D7")) {
                 return ""+(parsedOperand1 - parsedOperand2);
+
             } else if (operator.equalsIgnoreCase("mod")) {
                 return ""+(parsedOperand1 % parsedOperand2);
+
             }else if(operator.equalsIgnoreCase("\u00F7")){
                 return ""+(parsedOperand1 / parsedOperand2);
+
             }
         }catch (Exception e){
             System.out.println(new Date()+"[Engine][compute] "+e.getMessage());
