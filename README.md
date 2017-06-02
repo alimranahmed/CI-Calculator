@@ -1,10 +1,12 @@
 # CI- Calculator
+A Scientific calculator build on JAVA(J2SE) with swing API to design the interface. 
 
     Version: 2.0.0
     System requirement: Java Virtual Machine(JVM);
     Date of Released: 21st February 2017
     Copyright: 2017, CI- Technology
-
+    
+    
 ## Screenshots
 ![CI-Calculator](https://raw.githubusercontent.com/alimranahmed/ci-calculator/master/assets/143_2_0.png)
 
